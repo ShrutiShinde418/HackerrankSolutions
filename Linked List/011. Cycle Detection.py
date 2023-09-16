@@ -1,9 +1,11 @@
 # Problem: https://www.hackerrank.com/challenges/detect-whether-a-linked-list-contains-a-cycle/problem?isFullScreen=true
 
+
 class Node:
     def __init__(self, data):
         self.next = None
         self.data = data
+
 
 class SinglyLinkedList:
     def __init__(self):
@@ -18,6 +20,9 @@ class SinglyLinkedList:
             self.tail.next = node
         self.tail = node
 
+
+# time complexity: O(n)
+# space complexity: O(1)
 def has_cycle(head):
     slow = fast = head
     while slow and fast and fast.next:
@@ -26,6 +31,7 @@ def has_cycle(head):
         if slow == fast:
             return 1
     return 0
+
 
 if __name__ == "__main__":
     for i in range(int(input())):
